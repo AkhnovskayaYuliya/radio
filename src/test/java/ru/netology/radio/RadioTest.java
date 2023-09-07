@@ -10,6 +10,7 @@ public class RadioTest {
     public void shouldShowNumberOfInstalledStations20() {
         Radio radio = new Radio(20);
         Assertions.assertEquals(20, radio.getNumberOfStations());
+        Assertions.assertEquals(19, radio.getMaxCurrentStation());
     }
 
     @Test
@@ -18,6 +19,14 @@ public class RadioTest {
         radio.setCurrentStation(15);
         Assertions.assertEquals(15, radio.getCurrentStation());
     }
+
+    @Test
+    public void shouldNotSetStation20() {
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(20);
+        Assertions.assertEquals(0, radio.getCurrentStation());
+    }
+
 
 
     @Test
@@ -33,7 +42,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetStation11() {
-        radio.setCurrentStation(12);
+        radio.setCurrentStation(11);
         Assertions.assertEquals(0, radio.getCurrentStation());
     }
 

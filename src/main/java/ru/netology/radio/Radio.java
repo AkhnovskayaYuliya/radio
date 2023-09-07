@@ -21,6 +21,10 @@ public class Radio {
         return numberOfStations;
     }
 
+    public int getMaxCurrentStation () {
+        return maxCurrentStation;
+    }
+
     public int getCurrentStation() {
         return currentStation;
     }
